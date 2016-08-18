@@ -14,9 +14,9 @@ will ...
 </ul>
 
 To install nuget to install psake run the following command <br>
-nuget.exe update Solution file
-ie
-nuget.exe update psake.sln
+nuget.exe update Solution file<br>
+ie<br>
+nuget.exe update psake.sln<br>
 
 
     cls
