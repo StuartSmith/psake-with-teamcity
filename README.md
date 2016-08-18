@@ -2,8 +2,9 @@
 
 The is an example project to work with team city and PSAKE.
 
-A few things need to be known before we can start this project 1 is we need to create a boot strapper to start the PSAKE build process.
-Here is a sample boot strapper
+A few things need to be known before we can start this project. One is we need to create a boot strapper to start the PSAKE build process.
+
+Here is a sample boot strapper, the boot strapper will see remove Psake find the latest installed version of psake and then will load that version of psake into power shell. To get the latest version of psake installed run the 
 
     cls
 
