@@ -18,6 +18,7 @@ nuget.exe update Solution file<br>
 ie<br>
 nuget.exe update psake.sln<br>
 
+<h3>Boot strap build file..</h3>
 
     cls
 
@@ -47,6 +48,8 @@ nuget.exe update psake.sln<br>
 
 
 Now that we have a boot strapper it needs to call a build project to compile our Solution and Project files
+
+<h3>PSake Build File</h3>
 
     Example PSake Build file 
 
@@ -91,7 +94,7 @@ Now that we have a boot strapper it needs to call a build project to compile our
 		}
  
  
- <h2>#MSbuild task must be wrapped in an Exec so the script will stop executing if the MSBuild tasks fails</h2>
+ <h3>#MSbuild task must be wrapped in an Exec so the script will stop executing if the MSBuild tasks fails</h3>
  
 	task Compile `
 		-depends Init `
