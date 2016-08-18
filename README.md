@@ -1,4 +1,4 @@
-<h1> PSAKI with Team city </h1>
+<h1> PSAKI with Team City </h1>
 
 The is an example project to work with team city and PSAKE.
 
