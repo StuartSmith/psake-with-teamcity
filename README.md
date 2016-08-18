@@ -13,7 +13,7 @@ will ...
 <li>Load the latest version of PSake installed</li>
 </ul>
 
-To install nuget to install psake run the following command
+To install nuget to install psake run the following command <br>
 nuget.exe update Solution file
 ie
 nuget.exe update psake.sln
