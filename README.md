@@ -96,6 +96,7 @@ Now that we have a boot strapper it needs to call a build project to compile our
 		}
 		
 	
-	task Test -depends Compile, Clean -description "Run unit tests" { 
+	task Test -depends Compile, Clean -description "Run unit tests" 
+	{ 
 		Write-Host $testMessage
 	}
