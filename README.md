@@ -89,5 +89,5 @@ Now that we have a boot strapper it needs to call a build project to compile our
 
 	task Clean -description "Remove temporary files"
 		{
-  		Write-Host $cleanMessage
-  		}
+		Write-Host $cleanMessage
+		}
