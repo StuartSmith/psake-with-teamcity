@@ -76,13 +76,16 @@ Now that we have a boot strapper it needs to call a build project to compile our
 				New-Item $temporaryOutputDirectory -ItemType Directory | Out-Null
 		}
  
+ 
+ <h2>#MSbuild Task must be wrapped in an Exec</h2>
+ 
 	task Compile `
 		-depends Init `
 		-description "Compile the code" `
 		-requiredVariables solutionFile, buildConfiguration, buildPlatform, temporaryOutputDirectory `
 		{ 
 		Write-Host "Building solution $solutionFile"
-			<b>Exec</b> { 
+			Exec { 
 			msbuild $SolutionFile
 			"/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
 		}
