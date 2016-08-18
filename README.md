@@ -80,9 +80,9 @@ Now that we have a boot strapper it needs to call a build project to compile our
 		-depends Init `
 		-description "Compile the code" `
 		-requiredVariables solutionFile, buildConfiguration, buildPlatform, temporaryOutputDirectory `
-	{ 
-  		Write-Host "Building solution $solutionFile"
-		Exec { 
-		msbuild $SolutionFile "/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
+		{ 
+  			Write-Host "Building solution $solutionFile"
+			Exec { 
+			msbuild $SolutionFile "/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
 		}
 }
