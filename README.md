@@ -76,6 +76,13 @@ Now that we have a boot strapper it needs to call a build project to compile our
 				New-Item $temporaryOutputDirectory -ItemType Directory | Out-Null
 		}
  
-task Test -depends Compile, Clean -description "Run unit tests" { 
-  	Write-Host $testMessage
+	task Compile `
+		-depends Init `
+		-description "Compile the code" `
+		-requiredVariables solutionFile, buildConfiguration, buildPlatform, temporaryOutputDirectory `
+	{ 
+  		Write-Host "Building solution $solutionFile"
+		Exec { 
+		msbuild $SolutionFile "/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
+		}
 }
