@@ -81,8 +81,13 @@ Now that we have a boot strapper it needs to call a build project to compile our
 		-description "Compile the code" `
 		-requiredVariables solutionFile, buildConfiguration, buildPlatform, temporaryOutputDirectory `
 		{ 
-  			Write-Host "Building solution $solutionFile"
+		Write-Host "Building solution $solutionFile"
 			Exec { 
-			msbuild $SolutionFile "/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
+			msbuild $SolutionFile
+			"/p:Configuration=$buildConfiguration;Platform=$buildPlatform;OutDir=$temporaryOutputDirectory"
 		}
-}
+
+	task Clean -description "Remove temporary files"
+		{
+  		Write-Host $cleanMessage
+  		}
