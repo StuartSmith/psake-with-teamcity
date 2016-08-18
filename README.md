@@ -62,6 +62,18 @@ Now that we have a boot strapper it needs to call a build project to compile our
         	Write-Output "buildConfiguration $buildPlatform"
         	Assert ("x86", "x64", "Any CPU" -contains $buildPlatform)
         		"Invalid build platform '$buildPlatform'. Valid values are 'x86', 'x64' or 'Any CPU'"
+        		
+        	# Remove previous build results
+        	if (Test-Path $outputDirectory) 
+        	{
+        		Write-Host "Removing output directory located at $outputDirectory"
+        		Remove-Item $outputDirectory -Force -Recurse
+		}
+		Write-Host "Creating output directory located at $outputDirectory"
+		New-Item $outputDirectory -ItemType Directory | Out-Null
+
+		Write-Host "Creating temporary directory located at $temporaryOutputDirectory"
+		New-Item $temporaryOutputDirectory -ItemType Directory | Out-Null
 
  
 task Test -depends Compile, Clean -description "Run unit tests" { 
