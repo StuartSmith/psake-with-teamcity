@@ -94,7 +94,7 @@ Now that we have a boot strapper it needs to call a build project to compile our
 		}
  
  
- <h3>#MSbuild task must be wrapped in an Exec so the script will stop executing if the MSBuild tasks fails</h3>
+ <p>#MSbuild task must be wrapped in an Exec so the script will stop executing if the MSBuild tasks fails</p>
  
 	task Compile `
 		-depends Init `
